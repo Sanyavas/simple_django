@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://bootswatch.com/5/sketchy/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Quotes</title>
+</head>
+<body>
+
+<div class="container mt-5 col-md-8 mx-auto">
+    <h1 class="text-center mb-4">Quotes</h1>
+
+
+    {% for quote in quotes %}
+    <div class="alert alert-dismissible alert-light">
+        <div class="d-md-flex align-items-center mb-3">
+            <a class="col-md-2 mb-md-0 me-md-3">
+                <img src="{{ quote.picture }}"
+                     style="width: auto; height: 120px; border: 2px solid #ccc; border-radius: 10px;">
+            </a>
+            <div class="quote">
+                <p class="mb-1">{{ quote.quote }}</p>
+                <br>
+                <footer class="blockquote-footer">{{ quote.author }}</footer>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/js/bootstrap.min.js"></script>
